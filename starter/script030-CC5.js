@@ -21,7 +21,26 @@ Implémente un calculateur de pourboire en utilisant les objets et les boucles.
     2°) un tableau qui contient les montants finaux payés (facture + pourboire).
 AIDE : Commence avec deux tableaux vides en tant que propriétés
         et remplis-les dans la boucle
+*/
+const pourboire = {
+    montant: [124, 48, 268, 180, 42],
+    calcPourboire () {
+        for (let i = 0; i < this.montant.length; i++) {
+            if (this.montant[i]<50){
+                console.log(this.montant[i]*0.2);
+            }else if (this.montant[i]>=50 && this.montant[i]<200){
+                console.log(this.montant[i]*0.15);
+            }else if(this.montant[i]>=200){
+                console.log(this.montant[i]*0.1);
+            }
+        }
+    }
+};
 
+// Appelez la méthode calcPourboire
+pourboire.calcPourboire();
+
+/*
 BONUS (EXTRA) APRÈS AVOIR FINI :
 
 La famille de Mark est aussi partie en vacances, et est allée dans 4 restaurants différents.
@@ -40,3 +59,20 @@ du tableau (c'est comme cela qu'on calcule une moyenne).
 
 BONNE CHANCE 😀
 */
+console.log('===========');
+const pourboireMark = {
+    montant: [77, 375, 110, 45],
+    calcPourboireMark () {
+        for (let i = 0; i < this.montant.length; i++) {
+            if (this.montant[i]<100){
+                console.log(this.montant[i]*0.2);
+            }else if (this.montant[i]>=100 && this.montant[i]<300){
+                console.log(this.montant[i]*0.1);
+            }else if(this.montant[i]>=300){
+                console.log(this.montant[i]*0.25);
+            }
+        }
+    }
+};
+
+pourboireMark.calcPourboireMark();
