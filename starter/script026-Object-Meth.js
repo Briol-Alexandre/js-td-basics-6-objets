@@ -4,14 +4,14 @@
 
 /* Une MÉTHODE est une fonction associée à un objet */
 
-const aurora = {
+/*const aurora = {
     nom: "Aurora",
     sante: 150,
     force: 25
 };
-
+*/
 // Affiche "… a … points de vie et … en force"
-
+/*console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en forece`);*/
 // Crée une fonction décrire qui prend personnage en paramètre et renvoie la description du personnage
 // écris ta fonction décrire ici
 
@@ -24,22 +24,26 @@ const aurora = {
     force: 25,
     // renvoie la description du personnage
     // écris ton code ici
+    description() {
+        return `${this.nom} a ${this.sante} points de vie et ${this.force} en force`;
+    }
 };
 // Utilise à présent cette méthode pour afficher la description d'Aurora
-
+let descrAurora = aurora.description();
+console.log(descrAurora);
 /*
 EXERCICE 1 : Ajoute une méthode calcAge à john qui calcule son âge
 (en soustrayant sa date de naissance de 2019), le retourne et le stocke dans une propriété age.
 */
-var john = {
+let john = {
     firstName: 'John',
     lastName: 'Smith',
     birthYear: 1992,
     family: ['Jane', 'Mark', 'Bob', 'Emily'],
     job: 'teacher',
     isMarried: false,
-    calcAge: function() {
-        return this.age = 2019 - this.birthYear;
+    calcAge() {
+        return this.age = 2023 - this.birthYear;
     }
 };
 console.log(john);
@@ -55,7 +59,14 @@ EXERCICE 2 :
 /* **********************************
 * Les objets prédéfinis de JavaScript
 */
-
+const rectangle = {
+    longueur: 5,
+    largeur: 3,
+    surface() {
+        return this.longueur * this.largeur;
+    }
+}
+console.log(rectangle.surface());
 /*
 JavaScript permet de programmer en utilisant des objets :
 on dit que JavaScript est un langage orienté objet.
